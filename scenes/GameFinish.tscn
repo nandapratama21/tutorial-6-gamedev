@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://deck0jhl4rn8f"]
+
+[ext_resource type="Script" path="res://scenes/GameFinish.gd" id="1_ty0ua"]
+
+[sub_resource type="SystemFont" id="SystemFont_0b1pt"]
+
+[sub_resource type="SystemFont" id="SystemFont_15oqg"]
+font_names = PackedStringArray("Verdana")
+
+[node name="ColorRect" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.396214, 0.520421, 0.608654, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 248.0
+offset_right = 426.0
+offset_bottom = 271.0
+scale = Vector2(5.48, 5.48)
+theme_override_colors/font_color = Color(0.905882, 0.239216, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_0b1pt")
+text = "You Won!"
+
+[node name="LinkButton" type="LinkButton" parent="."]
+layout_mode = 0
+offset_left = 348.0
+offset_top = 380.0
+offset_right = 502.0
+offset_bottom = 403.0
+scale = Vector2(2.48, 2.48)
+theme_override_fonts/font = SubResource("SystemFont_15oqg")
+text = "Back To Main Menu"
+underline = 1
+script = ExtResource("1_ty0ua")
+
+[connection signal="pressed" from="LinkButton" to="LinkButton" method="_on_Back_to_Main_Menu_pressed"]

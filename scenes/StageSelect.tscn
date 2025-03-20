@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2xfnv5r1cyvf"]
+[gd_scene load_steps=4 format=3 uid="uid://wekxshbg4nqj"]
 
-[ext_resource type="Script" path="res://scenes/link_button_new_game.gd" id="1_wm633"]
-[ext_resource type="Texture2D" uid="uid://c8owgxiixowiu" path="res://assets/kenney_platformerpack/PNG/Players/128x256/Pink/alienPink_swim1.png" id="2_h6td3"]
-[ext_resource type="Script" path="res://scenes/link_button_stage_select.gd" id="2_sqjaf"]
-[ext_resource type="Texture2D" uid="uid://tpq0ge2lruix" path="res://assets/Familiar Looking Rocket.png" id="3_x7qgo"]
+[ext_resource type="Script" path="res://scenes/link_button_level.gd" id="1_b07mk"]
+[ext_resource type="Texture2D" uid="uid://c8owgxiixowiu" path="res://assets/kenney_platformerpack/PNG/Players/128x256/Pink/alienPink_swim1.png" id="2_dvcad"]
+[ext_resource type="Texture2D" uid="uid://tpq0ge2lruix" path="res://assets/Familiar Looking Rocket.png" id="3_5k1qa"]
 
 [node name="MarginContainer" type="MarginContainer"]
 anchors_preset = 15
@@ -26,28 +25,30 @@ alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.811765, 0, 1)
 theme_override_font_sizes/font_size = 100
-text = "Platform UI"
+text = "Select Level"
 
 [node name="LinkButton" type="LinkButton" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "New Game"
+text = "Level 1"
 underline = 1
-script = ExtResource("1_wm633")
+script = ExtResource("1_b07mk")
+scene_to_load = "Level 1"
 
 [node name="LinkButton2" type="LinkButton" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "Stage Select"
+text = "Level 2"
 underline = 1
-script = ExtResource("2_sqjaf")
+script = ExtResource("1_b07mk")
+scene_to_load = "Level 2"
 
 [node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("2_h6td3")
+texture = ExtResource("2_dvcad")
 stretch_mode = 4
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
@@ -55,8 +56,8 @@ custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("3_x7qgo")
+texture = ExtResource("3_5k1qa")
 stretch_mode = 4
 
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/LinkButton" to="HBoxContainer/VBoxContainer/LinkButton" method="_on_New_Game_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/LinkButton2" to="HBoxContainer/VBoxContainer/LinkButton2" method="_on_Stage_Select_Pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/LinkButton" to="HBoxContainer/VBoxContainer/LinkButton" method="_on_Level_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/LinkButton2" to="HBoxContainer/VBoxContainer/LinkButton2" method="_on_Level_pressed"]
